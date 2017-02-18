@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="#1e88e5">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" integrity="sha256-mDRlQYEnF3BuKJadRTD48MaEv4+tX8GVP9dEvjZRv3c=" crossorigin="anonymous" />
 	<style>
 		.card > .card-image {
 			margin-bottom: -6px;
@@ -214,7 +214,7 @@
 				<div class="col l4 offset-l2 s12">
 					<h5 class="white-text">Kontakt</h5>
 					<ul>
-						<li><a class="grey-text text-lighten-3" href="mailto:kontactATnoob-boxDOTnet" onclick = "this.href=this.href.replace(/AT/,'&#64;').replace(/DOT/,'&#46;')">E-Mail</a></li>
+						<li><a class="grey-text text-lighten-3" href="mailto:kontaktATnoob-boxDOTnet" onclick = "this.href=this.href.replace(/AT/,'&#64;').replace(/DOT/,'&#46;')">E-Mail</a></li>
 						<li><a class="grey-text text-lighten-3" href="https://twitter.com/EZTEQ">Twitter</a></li>
 					</ul>
 				</div>
@@ -226,25 +226,22 @@
 			</div>
 		</div>
 	</footer>
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 	<script>
-		$.getJSON('https://api.planetteamspeak.com/serverstatus/noob-box.net:62675/', function(json) {
-			if(json.status === 'success' && json.result.online) {
-					$('#ts3status').html(json.result.users + ' / ' + json.result.slots);
-			} else {
-					$('#ts3status').html('Offline');
-			}
-		});
+		var xhr = new XMLHttpRequest();
+		xhr.addEventListener("load", reponseReceived);
+		xhr.open("GET", "https://api.planetteamspeak.com/serverstatus/noob-box.net:62675/");
+		xhr.send();
 
-		$('a[href^=#]').on('click', function(e){
-			var href = $(this).attr('href');
-			$('html, body').animate({
-				scrollTop:$(href).offset().top
-			},'normal');
-			e.preventDefault();
-		});
+		function reponseReceived() {
+			var element = document.getElementById('ts3status');
+			var json = JSON.parse(this.response);
+			if(this.status === 200 && json.status === 'success' && json.result.online) {
+				element.innerText = json.result.users + ' / ' + json.result.slots;
+			} else {
+				element.innerText = 'Offline';
+			}
+		}
 
 		document.getElementById('year').innerText = new Date().getFullYear();
 	</script>
