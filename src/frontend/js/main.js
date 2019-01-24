@@ -10,7 +10,7 @@ function handleError() {
     if (response.status === 200) {
       let data = await response.json()
       
-      ts3clients.textContent = data.clientsOnline + '/' + data.clientsMax
+      ts3clients.textContent = data.clientsOnline + ' / ' + data.clientsMax
     } else {
       handleError()
     }
