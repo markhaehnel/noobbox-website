@@ -83,6 +83,5 @@ dist
 # Service worker
 sw.*
 
-functions
 .netlify
 .vscode
