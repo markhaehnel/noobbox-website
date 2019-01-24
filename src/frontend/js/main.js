@@ -8,7 +8,7 @@ function handleError() {
   try {
     let response = await fetch('/api/teamspeak')
     if (response.status === 200) {
-      let data = response.json()
+      let data = await response.json()
       
       ts3clients.textContent = data.clientsOnline + '/' + data.clientsMax
     } else {
