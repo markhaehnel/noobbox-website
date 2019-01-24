@@ -1,23 +1,14 @@
 {
   "name": "noob-box.net",
   "version": "1.0.0",
-  "description": "Wir sind ein Zusammenschluss aus Gamern und Freunden. Seit mehreren Jahren spielen wir gemeinsam Games übers Internet auf dem Computer.",
-  "author": "Mark Hähnel",
+  "main": "index.js",
+  "author": "Mark Hähnel <hello@markhaehnel.de>",
   "private": true,
   "scripts": {
-    "build": "yarn run generate && yarn run functions-build",
-    "dev": "nuxt",
-    "generate": "nuxt generate",
-    "functions-serve": "netlify-lambda serve functions",
-    "functions-build": "netlify-lambda build functions"
+    "build": "netlify-lambda build src/backend/"
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
     "netlify-lambda": "^1.3.0",
-    "nuxt": "^2.3.4",
     "ts3-nodejs-library": "^1.12.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.9"
   }
 }
