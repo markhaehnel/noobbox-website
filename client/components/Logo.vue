@@ -1,79 +1,14 @@
 <template>
-  <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two" />
-    <div class="Triangle Triangle--one" />
-    <div class="Triangle Triangle--three" />
-    <div class="Triangle Triangle--four" />
-  </div>
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 887 1024" fill="#fff">
+    <path d="M443.407-.01L.002 256.007V768l443.405 255.996L886.812 768.01V256.007zm0 93.113l362.786 209.425v418.911L443.407 930.884 80.621 721.459V302.538z"></path>
+    <path d="M63.17 241.662l-45.708 80.002 403.095 230.34 45.708-80.002z"></path>
+    <path d="M823.643 241.662l-403.095 230.34 45.718 80.002 403.085-230.34z"></path>
+    <path d="M397.339 511.993v460.681h92.136V511.993z"></path>
+  </svg>
 </template>
 
 <style>
-.VueToNuxtLogo {
-  display: inline-block;
-  animation: turn 2s linear forwards 1s;
-  transform: rotateX(180deg);
-  position: relative;
-  overflow: hidden;
-  height: 180px;
-  width: 245px;
-}
-
-.Triangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-}
-
-.Triangle--one {
-  border-left: 105px solid transparent;
-  border-right: 105px solid transparent;
-  border-bottom: 180px solid #41b883;
-}
-
-.Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #3b8070;
-}
-
-.Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495e;
-}
-
-.Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
-}
-
-@keyframes turn {
-  100% {
-    transform: rotateX(0deg);
-  }
-}
-
-@keyframes godown {
-  100% {
-    top: 180px;
-  }
-}
-
-@keyframes goright {
-  100% {
-    left: 70px;
-  }
+.logo {
+  height: 30vh;
 }
 </style>

@@ -2,24 +2,20 @@
   <section class="container">
     <div>
       <logo />
-      <h1 class="title">
-        noob-box.net
-      </h1>
-      <h2 class="subtitle">
-        Community website
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+      <div>
+      <div class="box">
+        <h2 class="subtitle">TeamSpeak</h2>
+        <p v-if="tsInfo !== null">
+          Clients: {{ tsInfo.clientsOnline }}/{{ tsInfo.clientsMax }}
+        </p>
+        <p v-else>
+          &nbsp;
+        </p>
+        <a href="ts3server://noob-box.net/" class="button">
+          Verbinden
+        </a>
       </div>
+    </div>
     </div>
   </section>
 </template>
@@ -30,6 +26,11 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  async asyncData ({ params }) {
+    let response = await fetch('/api/teamspeak')
+    let data = response.status !== 200 ? response.json() : null
+    return { tsInfo: data }
   }
 }
 </script>
@@ -41,7 +42,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center
 }
 
 .title {
@@ -50,19 +51,13 @@ export default {
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
+  color: #fff;
   letter-spacing: 1px;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
-  color: #526488;
+  font-size: 32px;
   word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

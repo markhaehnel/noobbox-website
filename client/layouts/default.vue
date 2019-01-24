@@ -24,32 +24,36 @@ html {
   margin: 0;
 }
 
-.button--green {
+body {
+  background: #2196F3;
+}
+
+.box {
+  margin-top: 32px;
   display: inline-block;
   border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+  border: 1px solid #fff;
+  color: #222;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 10px 30px 30px 30px;
+  background: #fff;
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, .2);
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
+.button {
+  display: block;
   border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
+  color: #222;
   text-decoration: none;
   padding: 10px 30px;
-  margin-left: 15px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, .2);
+  margin-top: 16px;
+  transition: 0.25s;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.button:hover {
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, .2);
 }
 </style>
