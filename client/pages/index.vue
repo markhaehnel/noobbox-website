@@ -28,7 +28,11 @@ export default {
     Logo
   },
   data() {
-    return { isLoading: true }
+    return {
+      isLoading: true,
+      clientsOnline: 0,
+      clientsMax: 0
+    }
   },
   async mounted () {
     let response = await fetch('/api/teamspeak')
