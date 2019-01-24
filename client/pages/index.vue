@@ -27,10 +27,13 @@ export default {
   components: {
     Logo
   },
-  async asyncData ({ params }) {
+  data() {
+    return { tsInfo: null }
+  },
+  async mounted () {
     let response = await fetch('/api/teamspeak')
-    let data = response.status !== 200 ? response.json() : null
-    return { tsInfo: data }
+    let data = response.status === 200 ? response.json() : null
+    this.tsInfo = data
   }
 }
 </script>
