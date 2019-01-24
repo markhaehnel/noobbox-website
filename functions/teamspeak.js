@@ -24,6 +24,9 @@ exports.handler = function(event, context, callback) {
       ts3.quit()
       callback(null, {
         statusCode: 200,
+        headers: {
+          "Cache-Control": "public, max-age=900"
+        },
         body: JSON.stringify({
           clientsOnline: clients.length,
           clientsMax: serverInfo.virtualserver_maxclients
