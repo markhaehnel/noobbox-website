@@ -33,7 +33,7 @@ export default {
   async mounted () {
     let response = await fetch('/api/teamspeak')
     let data = response.status === 200 ? response.json() : null
-    this.$set(this, tsInfo, data)
+    this.$set(this, 'tsInfo', data)
   }
 }
 </script>
