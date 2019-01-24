@@ -1,4 +1,4 @@
 [build]
   functions = "dist/functions/"
   publish = "dist/client/"
-  command = "yarn run generate"
+  command = "yarn run build"
