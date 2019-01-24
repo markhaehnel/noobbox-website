@@ -5,8 +5,8 @@
       <div>
       <div class="box">
         <h2 class="subtitle">TeamSpeak</h2>
-        <p v-if="tsInfo !== null">
-          Clients: {{ tsInfo.clientsOnline }}/{{ tsInfo.clientsMax }}
+        <p v-if="isLoading === false">
+          Clients: {{ clientsOnline }}/{{ clientsMax }}
         </p>
         <p v-else>
           &nbsp;
@@ -28,12 +28,14 @@ export default {
     Logo
   },
   data() {
-    return { tsInfo: null }
+    return { isLoading: true }
   },
   async mounted () {
     let response = await fetch('/api/teamspeak')
     let data = response.status === 200 ? response.json() : null
-    this.$set(this, 'tsInfo', data)
+    this.clientsOnline = data.clientsOnline
+    this.clientsMax = data.clientsMax
+    this.isLoading = false
   }
 }
 </script>
