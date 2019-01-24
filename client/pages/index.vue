@@ -36,10 +36,11 @@ export default {
   },
   async mounted () {
     let response = await fetch('/api/teamspeak')
-    let data = response.status === 200 ? response.json() : null
-    this.clientsOnline = data.clientsOnline
-    this.clientsMax = data.clientsMax
-    this.isLoading = false
+    if (response.status === 200) {
+      this.clientsOnline = data.clientsOnline
+      this.clientsMax = data.clientsMax
+      this.isLoading = false
+    }
   }
 }
 </script>
