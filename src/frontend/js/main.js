@@ -1,7 +1,7 @@
 let ts3clients = document.querySelector('#ts3clients')
 
 function handleError() {
-  ts3clients.textContent = "Offline"
+  ts3clients.textContent = "🤷"
 }
 
 (async function(){
@@ -9,8 +9,7 @@ function handleError() {
     let response = await fetch('/api/teamspeak')
     if (response.status === 200) {
       let data = await response.json()
-      
-      ts3clients.textContent = data.clientsOnline + ' / ' + data.clientsMax
+      ts3clients.textContent = data.clientsOnline + ' plebs online'
     } else {
       handleError()
     }

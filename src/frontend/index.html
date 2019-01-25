@@ -83,8 +83,43 @@
       word-spacing: 5px;
     }
 
+    .clients {
+      font-size: 20px;
+      font-weight: 300;
+      transition: 0.5s;
+    }
+
     .logo {
       height: 30vh;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: .05;
+      }
+
+      50% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: .05;
+      }
+    }
+
+    .loading span {
+      animation-name: blink;
+      animation-duration: 1.4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+    }
+
+    .loading span:nth-child(2) {
+      animation-delay: .2s;
+    }
+
+    .loading span:nth-child(3) {
+      animation-delay: .4s;
     }
   </style>
 </head>
@@ -101,8 +136,8 @@
       <div>
         <div class="box">
           <h2 class="title">TeamSpeak</h2>
-          <p>
-            Clients: <span id="ts3clients">...</span>
+          <p id="ts3clients" class="clients">
+            <span class="loading"><span>●</span><span>●</span><span>●</span></span>
           </p>
           <a href="ts3server://noob-box.net/" class="button">
             Verbinden

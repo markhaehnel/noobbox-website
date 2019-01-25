@@ -19,7 +19,6 @@ exports.handler = function(event, context, callback) {
 
   ts3.on("ready", async () => {
     try {
-      let serverInfo = await ts3.serverInfo()
       let clients = await ts3.clientList({client_type:0})
       ts3.quit()
       callback(null, {
@@ -29,7 +28,6 @@ exports.handler = function(event, context, callback) {
         },
         body: JSON.stringify({
           clientsOnline: clients.length,
-          clientsMax: serverInfo.virtualserver_maxclients
         })
       });
     } catch (e) {
