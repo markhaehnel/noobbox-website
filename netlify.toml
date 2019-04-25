@@ -1,4 +1,2 @@
 [build]
-  functions = "dist/"
-  publish = "src/frontend/"
-  command = "yarn run build"
+  publish = "."
