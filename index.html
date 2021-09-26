@@ -1,147 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="expires" content="604800" />
+    <meta
+      name="description"
+      content="Wir sind ein Zusammenschluss aus Gamern und Freunden. Seit mehreren Jahren spielen wir gemeinsam Games übers Internet auf dem Computer."
+    />
+    <meta
+      name="keywords"
+      content="Noob, Box, Noobbox, Noob-box, Gaming, Spiele, Community, Counter, Strike, Source, Warcraft, League, Legends, LoL, CSS, Minecraft, ArmA, Battlefield, TeamSpeak, DayZ, GTA, Grand, Theft, Auto, Online, PAYDAY, H1Z1, EZTEQ, Ryuk, ReXus, CotedIvoire, Flippy, Gorax, WarEdge"
+    />
+    <meta name="author" content="noob-box" />
+    <meta name="robots" content="index, follow" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="expires" content="604800">
-  <meta name="description" content="Wir sind ein Zusammenschluss aus Gamern und Freunden. Seit mehreren Jahren spielen wir gemeinsam Games übers Internet auf dem Computer." />
-  <meta name="keywords" content="Noob, Box, Noobbox, Noob-box, Gaming, Spiele, Community, Counter, Strike, Source, Warcraft, League, Legends, LoL, CSS, Minecraft, ArmA, Battlefield, TeamSpeak, DayZ, GTA, Grand, Theft, Auto, Online, PAYDAY, H1Z1, EZTEQ, Ryuk, ReXus, CotedIvoire, Flippy, Gorax, WarEdge" />
-  <meta name="author" content="noob-box">
-  <meta name="robots" content="index, follow" />
+    <title>noob-box - Die Noob Community</title>
 
-  <title>noob-box - Die Noob Community</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e88e5" />
 
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1e88e5">
-
-  <style>
-    html {
-      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, 'Helvetica Neue', Arial, sans-serif;
-      font-size: 16px;
-      word-spacing: 1px;
-      -ms-text-size-adjust: 100%;
-      -webkit-text-size-adjust: 100%;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      box-sizing: border-box;
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    body {
-      background: #2196F3;
-    }
-
-    .box {
-      margin-top: 32px;
-      display: inline-block;
-      border-radius: 4px;
-      border: 1px solid #fff;
-      color: #222;
-      text-decoration: none;
-      padding: 10px 30px 30px 30px;
-      background: #fff;
-      box-shadow: 0px 12px 16px rgba(0, 0, 0, .2);
-    }
-
-    .button {
-      display: block;
-      border-radius: 4px;
-      color: #222;
-      text-decoration: none;
-      padding: 10px 30px;
-      box-shadow: 0px 2px 8px rgba(0, 0, 0, .2);
-      margin-top: 16px;
-      transition: 0.25s;
-    }
-
-    .button:hover {
-      color: #333;
-      background-color: #fff;
-      box-shadow: 0px 8px 32px rgba(0, 0, 0, .2);
-    }
-
-    .container {
-      margin: 0 auto;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center
-    }
-
-    .title {
-      font-weight: 300;
-      font-size: 32px;
-      word-spacing: 5px;
-    }
-
-    .clients {
-      font-size: 20px;
-      font-weight: 300;
-    }
-
-    .logo {
-      height: 30vh;
-    }
-
-    @keyframes blink {
-      0% {
-        opacity: .05;
+    <style>
+      html {
+        font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+        word-spacing: 1px;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
       }
 
-      50% {
-        opacity: .8;
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
       }
 
-      100% {
-        opacity: .05;
+      body {
+        background: #2196f3;
       }
-    }
 
-    .loading span {
-      animation-name: blink;
-      animation-duration: 1.4s;
-      animation-iteration-count: infinite;
-      animation-fill-mode: both;
-    }
+      .box {
+        margin-top: 32px;
+        display: inline-block;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        color: #222;
+        text-decoration: none;
+        padding: 10px 30px 30px 30px;
+        background: #fff;
+        box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.2);
+      }
 
-    .loading span:nth-child(2) {
-      animation-delay: .2s;
-    }
+      .button {
+        display: block;
+        border-radius: 4px;
+        color: #222;
+        text-decoration: none;
+        padding: 10px 30px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+        margin-top: 16px;
+        transition: 0.25s;
+      }
 
-    .loading span:nth-child(3) {
-      animation-delay: .4s;
-    }
-  </style>
-</head>
+      .button:hover {
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
+      }
 
-<body>
-  <section class="container">
-    <div>
-      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 887 1024" fill="#fff">
-        <path d="M443.407-.01L.002 256.007V768l443.405 255.996L886.812 768.01V256.007zm0 93.113l362.786 209.425v418.911L443.407 930.884 80.621 721.459V302.538z"></path>
-        <path d="M63.17 241.662l-45.708 80.002 403.095 230.34 45.708-80.002z"></path>
-        <path d="M823.643 241.662l-403.095 230.34 45.718 80.002 403.085-230.34z"></path>
-        <path d="M397.339 511.993v460.681h92.136V511.993z"></path>
-      </svg>
+      .container {
+        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .title {
+        font-weight: 300;
+        font-size: 32px;
+        word-spacing: 5px;
+      }
+
+      .clients {
+        font-size: 20px;
+        font-weight: 300;
+      }
+
+      .logo {
+        height: 30vh;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 0.05;
+        }
+
+        50% {
+          opacity: 0.8;
+        }
+
+        100% {
+          opacity: 0.05;
+        }
+      }
+
+      .loading span {
+        animation-name: blink;
+        animation-duration: 1.4s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+      }
+
+      .loading span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .loading span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="container">
       <div>
-        <div class="box">
-          <h2 class="title">TeamSpeak</h2>
-          <a href="ts3server://noob-box.net/" class="button">
-            Verbinden
-          </a>
+        <svg
+          class="logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 887 1024"
+          fill="#fff"
+        >
+          <path
+            d="M443.407-.01L.002 256.007V768l443.405 255.996L886.812 768.01V256.007zm0 93.113l362.786 209.425v418.911L443.407 930.884 80.621 721.459V302.538z"
+          ></path>
+          <path
+            d="M63.17 241.662l-45.708 80.002 403.095 230.34 45.708-80.002z"
+          ></path>
+          <path
+            d="M823.643 241.662l-403.095 230.34 45.718 80.002 403.085-230.34z"
+          ></path>
+          <path d="M397.339 511.993v460.681h92.136V511.993z"></path>
+        </svg>
+        <div>
+          <div class="box">
+            <h2 class="title">TeamSpeak</h2>
+            <a href="ts3server://noob-box.net/" class="button"> Verbinden </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>
